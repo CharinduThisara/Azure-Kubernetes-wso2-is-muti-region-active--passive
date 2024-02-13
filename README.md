@@ -41,15 +41,20 @@ Before proceeding, ensure you have the following:
 
 1. Clone the Git repository to the VM.
 
-### Step 8: Deploy WSO2 Identity Server
+### Step 8: Create the External DBs.
+
+1. Create two SQL Servers in each paired region.
+2. Create a database in the primary region and set up Geo-Replication for read-only replica.
+
+### Step 9: Deploy WSO2 Identity Server
 
 1. Deploy the IS Cluster with the default h2 database and verify accessibility.
 
-### Step 9: Repeat Steps 3-8 for Secondary Region
+### Step 10: Repeat Steps 3-8 for Secondary Region
 
 1. Repeat Steps 3-8 in the paired region (Central-US) to deploy the secondary instance of the Identity Server.
 
-### Step 10: Connect External Database
+### Step 11: Connect External Database
 
 1. Create two SQL Servers in each paired region.
 2. Create a database in the primary region and set up Geo-Replication for read-only replica.
