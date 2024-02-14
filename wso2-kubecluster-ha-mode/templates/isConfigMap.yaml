@@ -39,13 +39,15 @@ data:
 
     [database.identity_db]
     type = "mssql"
-    url = "jdbc:sqlserver://is-mssql-server-primary.database.windows.net:1433/ismssqldb-primary"
+    url = "jdbc:sqlserver://is-mssql-server-primary.database.windows.net:1433"
+    database = "ismssqldb-primary"
     username = "regadmin"
     password = "nimdager@123"
 
     [database.shared_db]
     type = "mssql"
-    url = "jdbc:sqlserver://is-mssql-server-primary.database.windows.net:1433/ismssqldb-primary"
+    url = "jdbc:sqlserver://is-mssql-server-primary.database.windows.net:1433"
+    database = "ismssqldb-primary"
     username = "regadmin"
     password = "nimdager@123"
 
