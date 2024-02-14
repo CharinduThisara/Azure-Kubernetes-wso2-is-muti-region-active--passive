@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
         - name: wso2-is-container
-          image: is-node-1:full 
+          image: acrasgardeomainrnd001.azurecr.io/is7.0:latest  
           ports:
             - containerPort: 9443
             - containerPort: 4000
