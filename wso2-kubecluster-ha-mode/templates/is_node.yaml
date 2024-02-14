@@ -1,0 +1,40 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: wso2-is-node
+  namespace: {{ .Values.Namespace }}
+  labels:
+    deployment: wso2is # Labels for the deployment itself
+spec:
+  selector:
+    matchLabels:
+      deployment: wso2is  # Selector labels to match labels in the pod template
+  replicas: {{ .Values.wso2.deployment.wso2is.replicas }}
+  template:
+    metadata:
+      labels:
+        deployment: wso2is  # Labels applied to pods created by this template
+    spec:
+      containers:
+        - name: wso2-is-container
+          image: is-node-1:full 
+          ports:
+            - containerPort: 9443
+            - containerPort: 4000
+            - containerPort: 9763
+            - containerPort: 3306
+          env:
+            - name: NODE_IP
+              valueFrom:
+                fieldRef:
+                  fieldPath: status.podIP
+          volumeMounts: 
+            - name: identity-server-conf
+              mountPath: /app/wso2is-6.1.0/repository/conf/deployment.toml
+              subPath: deployment.toml
+      
+      volumes:
+        - name: identity-server-conf
+          configMap:
+            name: identity-server-conf
+      serviceAccountName: is-service-account
