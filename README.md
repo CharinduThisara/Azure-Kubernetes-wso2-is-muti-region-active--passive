@@ -59,7 +59,15 @@ Before proceeding, ensure you have the following:
 1. Create two SQL Servers in each paired region.
 2. Create a database in the primary region and set up Geo-Replication for read-only replica.
 3. Delete previous Identity Server deployments and edit configurations to use the external database:
-   - Use volume mount to replace `deployment.toml` for database configurations.
-   - Use volume mount to replace `registry.xml.j2` to enable read-only mode for the IS in the secondary region.
+   - Use a volume mount to replace `deployment.toml` for database configurations.
+   - Use a volume mount to replace `registry.xml.j2` to enable read-only mode for the IS in the secondary region.
 
 By following these steps, you will have successfully deployed the WSO2 Identity Server in an Active/Passive configuration with Hot Standby Mode on Azure.
+
+
+```bash
+kubectl exec -it wso2-is-node-57f8c7b9f-6jtcl -- /bin/bash
+```
+```bash
+sqlcmd -S is-mssql-server-primary.database.windows.net,1433 -U regadmin -P {password} -Q "SELECT name FROM sys.databases;"
+```
