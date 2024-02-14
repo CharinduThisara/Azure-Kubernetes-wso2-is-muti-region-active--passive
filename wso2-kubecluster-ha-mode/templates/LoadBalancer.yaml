@@ -25,7 +25,7 @@ spec:
     deployment: wso2is
   ports: 
   name: http
-    port: 9763
+  -  port: 9763
     targetPort: 9763
     protocol: TCP 
   - name: servlet-http
