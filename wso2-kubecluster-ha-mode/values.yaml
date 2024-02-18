@@ -24,7 +24,7 @@ wso2:
       config: true
       # Container image configurations
       # If a custom image must be used, provide its value
-      hostname: "wso2.is"
+      hostname: "wso2-is.trafficmanager.net"
       dockerRegistry: "docker.wso2.com"
       imageName: "wso2is"
       imageTag: "6.1.0.0"

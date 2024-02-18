@@ -24,7 +24,7 @@ spec:
   selector:
     deployment: wso2is
   ports: 
-  name: http
+  - name: http
     port: 9763
     targetPort: 9763
     protocol: TCP 

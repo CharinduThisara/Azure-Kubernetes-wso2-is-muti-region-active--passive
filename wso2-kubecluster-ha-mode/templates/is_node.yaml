@@ -17,7 +17,8 @@ spec:
     spec:
       containers:
         - name: wso2-is-container
-          image: is-node-1:full 
+          image: acrasgardeomainrnd001.azurecr.io/is7.0:testrc  
+          imagePullPolicy: Always
           ports:
             - containerPort: 9443
             - containerPort: 4000
@@ -30,7 +31,7 @@ spec:
                   fieldPath: status.podIP
           volumeMounts: 
             - name: identity-server-conf
-              mountPath: /app/wso2is-6.1.0/repository/conf/deployment.toml
+              mountPath: /home/wso2carbon/wso2is-7.0.0/repository/conf/deployment.toml
               subPath: deployment.toml
       
       volumes:
