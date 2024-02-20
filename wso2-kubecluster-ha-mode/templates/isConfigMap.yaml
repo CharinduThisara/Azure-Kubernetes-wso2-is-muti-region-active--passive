@@ -104,6 +104,9 @@ data:
     [identity.auth_framework.endpoint]
     app_password= "dashboard"
 
+    [oauth.token_generation]
+    access_token_type= "self_contained" 
+
     [cors]
     allow_generic_http_requests = true
     allow_any_origin = true
