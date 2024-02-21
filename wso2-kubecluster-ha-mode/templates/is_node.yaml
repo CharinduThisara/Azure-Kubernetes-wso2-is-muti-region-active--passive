@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
         - name: wso2-is-container
-          image: acrasgardeomainrnd001.azurecr.io/is7.0:rc1  
+          image: acrasgardeomainrnd001.azurecr.io/is7.0:rc2
           imagePullPolicy: Always
           ports:
             - containerPort: 9443
