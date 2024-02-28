@@ -121,6 +121,7 @@ data:
     max_age = 3600
     tag_requests = false
 
-{{- end }}
+    [identity_mgt.user_self_registration]
+    callback_url = "${carbon.protocol}:\\/\\/${carbon.host}\\/.*" 
 
-wso2-is-ha
+{{- end }}
