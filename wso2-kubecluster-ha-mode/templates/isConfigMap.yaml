@@ -125,7 +125,7 @@ data:
     callback_url = "${carbon.protocol}:\\/\\/${carbon.host}\\/.*" 
 
     [registry_mode]
-    registry_read_only = false
+    registry_read_only = true
 
 {{- end }}
 
