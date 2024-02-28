@@ -124,5 +124,8 @@ data:
     [identity_mgt.user_self_registration]
     callback_url = "${carbon.protocol}:\\/\\/${carbon.host}\\/.*" 
 
+    [registry_mode]
+    registry_read_only = false
+
 {{- end }}
 
