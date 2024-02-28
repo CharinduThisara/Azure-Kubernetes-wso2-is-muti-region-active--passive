@@ -121,9 +121,6 @@ data:
     max_age = 3600
     tag_requests = false
 
-    [registry_mode]
-    registry_read_only = {{ .Values.readonly }}
-
 {{- end }}
 
 wso2-is-ha
