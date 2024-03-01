@@ -40,19 +40,19 @@ wso2:
       # Startup probe executed prior to Liveness Probe taking over
       startupProbe:
         # Number of seconds after the container has started before startup probes are initiated
-        initialDelaySeconds: 60
+        initialDelaySeconds: 1
         # How often (in seconds) to perform the probe
-        periodSeconds: 5
+        periodSeconds: 1
         # Number of attempts
         failureThreshold: 30
       # Indicates whether the container is running
       livenessProbe:
         # How often (in seconds) to perform the probe
-        periodSeconds: 10
+        periodSeconds: 1
       # Indicates whether the container is ready to service requests
       readinessProbe:
         # Number of seconds after the container has started before readiness probes are initiated
-        initialDelaySeconds: 60
+        initialDelaySeconds: 1
         # How often (in seconds) to perform the probe
         periodSeconds: 10
 
