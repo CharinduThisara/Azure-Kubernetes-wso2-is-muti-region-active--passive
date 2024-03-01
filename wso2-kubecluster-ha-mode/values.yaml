@@ -13,7 +13,7 @@
 # limitations under the License.
 Namespace: wso2is
 
-registry_mode: false
+registry_mode: true
 
 wso2:
   deployment:
