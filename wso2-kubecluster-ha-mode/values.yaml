@@ -29,7 +29,7 @@ wso2:
       hostname: "wso2-is.trafficmanager.net"
       dockerRegistry: "docker.wso2.com"
       imageName: "wso2is"
-      imageTag: "6.1.0.0"
+      imageTag: "7.0.0.0"
       # Refer to the Kubernetes documentation on updating images (https://kubernetes.io/docs/concepts/containers/images/#updating-images)
       imagePullPolicy: Never
 
