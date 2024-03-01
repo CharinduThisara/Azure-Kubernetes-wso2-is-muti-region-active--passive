@@ -126,7 +126,7 @@ data:
 
 {{- if .Values.registry_mode }}
     [registry_mode]
-    registry_read_only = false
+    registry_read_only = true
 {{- end }}
 
 {{- end }}
