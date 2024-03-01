@@ -24,6 +24,7 @@ spec:
               path: /carbon/admin/login.jsp
               port: 9443
               scheme: HTTPS
+            initialDelaySeconds: {{ .Values.wso2.deployment.wso2is.livenessProbe.initialDelaySeconds }}
             periodSeconds: {{ .Values.wso2.deployment.wso2is.livenessProbe.periodSeconds }}
           readinessProbe:
             httpGet:

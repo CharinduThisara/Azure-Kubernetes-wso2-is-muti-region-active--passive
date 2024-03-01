@@ -47,8 +47,12 @@ wso2:
         failureThreshold: 30
       # Indicates whether the container is running
       livenessProbe:
+        # Number of seconds after the container has started before liveness probes are initiated
+        initialDelaySeconds: 60
         # How often (in seconds) to perform the probe
         periodSeconds: 10
+        # Number of attempts
+        failureThreshold: 30
       # Indicates whether the container is ready to service requests
       readinessProbe:
         # Number of seconds after the container has started before readiness probes are initiated
