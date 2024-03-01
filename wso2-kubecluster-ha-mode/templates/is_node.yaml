@@ -10,6 +10,11 @@ spec:
     matchLabels:
       deployment: wso2is  # Selector labels to match labels in the pod template
   replicas: {{ .Values.wso2.deployment.wso2is.replicas }}
+  strategy:
+  type: RollingUpdate
+  rollingUpdate:
+    maxUnavailable: 0
+    maxSurge: 0
   template:
     metadata:
       labels:
