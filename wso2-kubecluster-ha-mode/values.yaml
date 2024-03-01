@@ -48,7 +48,7 @@ wso2:
       # Indicates whether the container is running
       livenessProbe:
         # Number of seconds after the container has started before liveness probes are initiated
-        initialDelaySeconds: 60
+        initialDelaySeconds: 120
         # How often (in seconds) to perform the probe
         periodSeconds: 10
         # Number of attempts
