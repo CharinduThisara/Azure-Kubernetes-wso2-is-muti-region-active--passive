@@ -15,7 +15,7 @@
 apiVersion: v1
 kind: ConfigMap
 metadata:
-  name: identity-server-conf
+  name: identity-server-conf-ro
   namespace : {{ .Values.Namespace }}
   
 {{ if .Values.wso2.deployment.wso2is.config }}
