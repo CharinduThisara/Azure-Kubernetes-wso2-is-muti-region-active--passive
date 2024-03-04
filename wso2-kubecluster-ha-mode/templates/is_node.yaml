@@ -52,7 +52,7 @@ spec:
       
       volumes:
         - name: identity-server-conf
-{{- if eq .Values.registry_mode "true" }}
+{{- if (default .Values.registry_mode true)}}
           configMap:
             name: identity-server-conf-ro
 {{- else }}
