@@ -10,7 +10,14 @@ if [ ! -f "$VALUES_FILE" ]; then
 fi
 
 # Set the desired value for registry_mode (true or false)
-NEW_REGISTRY_MODE="true"
+if [ "$1" == "ro" ]; then
+    NEW_REGISTRY_MODE="true"
+elif [ "$1" == "false" ]; then
+    NEW_REGISTRY_MODE="false"
+else
+    echo "Error: Invalid argument. Please specify true or false."
+    exit 1
+fi
 
 # Update registry_mode value in values.yaml
 sed -i "s/\(^\s*registry_mode\s*:\s*\).*\$/\1$NEW_REGISTRY_MODE/" "$VALUES_FILE"
