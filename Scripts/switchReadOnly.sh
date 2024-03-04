@@ -2,9 +2,13 @@
 
 # Set the desired value for registry_mode (true or false)
 if [ "$1" == "ro" ]; then
-    helm upgrade wso2-is-ha ../wso2-kubecluster-ha-mode --values ../wso2-kubecluster-ha-mode/valuesRO.yaml
+    rm -f ../wso2-kubecluster-ha-mode/templates/is_deployment.yaml
+    cp ../wso2-kubecluster-ha-mode/deployments/is-node_RO.yaml ../wso2-kubecluster-ha-mode/templates/
+    helm upgrade wso2-is-ha ../wso2-kubecluster-ha-mode
 elif [ "$1" == "rw" ]; then
-    helm upgrade wso2-is-ha ../wso2-kubecluster-ha-mode --values ../wso2-kubecluster-ha-mode/values.yaml
+    rm -f ../wso2-kubecluster-ha-mode/templates/is_deployment.yaml
+    cp ../wso2-kubecluster-ha-mode/deployments/is-node_RW.yaml ../wso2-kubecluster-ha-mode/templates/
+    helm upgrade wso2-is-ha ../wso2-kubecluster-ha-mode
 else
     echo "Error: Invalid argument. Please specify ro or rw."
     echo "Usage: $0 <ro|rw>"
