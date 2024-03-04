@@ -12,10 +12,11 @@ fi
 # Set the desired value for registry_mode (true or false)
 if [ "$1" == "ro" ]; then
     NEW_REGISTRY_MODE="true"
-elif [ "$1" == "false" ]; then
+elif [ "$1" == "rw" ]; then
     NEW_REGISTRY_MODE="false"
 else
     echo "Error: Invalid argument. Please specify true or false."
+    echo "Usage: $0 <ro|rw>"
     exit 1
 fi
 
