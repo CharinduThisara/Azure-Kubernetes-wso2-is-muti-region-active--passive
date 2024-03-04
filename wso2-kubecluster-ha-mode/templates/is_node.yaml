@@ -12,8 +12,6 @@ spec:
   replicas: {{ .Values.wso2.deployment.wso2is.replicas }}
   strategy:
     type: RollingUpdate
-    maxUnavailable: 0
-    maxSurge: 0
   template:
     metadata:
       labels:
