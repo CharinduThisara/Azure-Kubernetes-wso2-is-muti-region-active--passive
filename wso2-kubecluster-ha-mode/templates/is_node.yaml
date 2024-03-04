@@ -55,6 +55,11 @@ spec:
       
       volumes:
         - name: identity-server-conf
+{{- if .Values.registry_mode }}
           configMap:
-            name: identity-server-conf
+            name: identity-server-conf-ro
+{{- else }}
+          configMap:
+            name: identity-server-conf-rw
+{{- end }}
       serviceAccountName: is-service-account
