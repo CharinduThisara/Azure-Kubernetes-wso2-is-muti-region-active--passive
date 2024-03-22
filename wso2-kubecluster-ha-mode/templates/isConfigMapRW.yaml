@@ -38,36 +38,23 @@ data:
     type = "database_unique_id"
 
     [database.identity_db]
-    type = "mssql"
-    url = "jdbc:sqlserver://is-mssql-server-primary.database.windows.net:1433;databaseName=ismssqldbprimary"
-    username = "regadmin"
-    password = "nimdager@123"
+    type = "h2"
+    url = "jdbc:h2:./repository/database/WSO2IDENTITY_DB;DB_CLOSE_ON_EXIT=FALSE;LOCK_TIMEOUT=60000"
+    username = "wso2carbon"
+    password = "wso2carbon"
 
     [database.shared_db]
-    type = "mssql"
-    url = "jdbc:sqlserver://is-mssql-server-primary.database.windows.net:1433;databaseName=ismssqldbprimary"
-    username = "regadmin"
-    password = "nimdager@123"
+    type = "h2"
+    url = "jdbc:h2:./repository/database/WSO2SHARED_DB;DB_CLOSE_ON_EXIT=FALSE;LOCK_TIMEOUT=60000"
+    username = "wso2carbon"
+    password = "wso2carbon"
 
-    [database.identity_db.pool_options]
-    maxActive = "80"
-    maxWait = "360000"
-    minIdle ="5"
-    testOnBorrow = true
-    validationQuery="SELECT 1"
-    validationInterval="30000"
-    defaultAutoCommit = false
-    commitOnReturn = true
-
-    [database.shared_db.pool_options]
-    maxActive = "80"
-    maxWait = "360000"
-    minIdle ="5"
-    testOnBorrow = true
-    validationQuery="SELECT 1"
-    validationInterval="30000"
-    defaultAutoCommit = false
-    commitOnReturn = true
+    [[event_listener]]
+    id = "custom-user-operation-event-listener"
+    type = "org.wso2.carbon.user.core.listener.UserOperationEventListener"
+    name = "org.wso2.custom.user.operation.event.listener.CustomUserOperationEventListener"
+    order = 9000
+    enable = true
 
     [clustering]
     membership_scheme = "kubernetes"

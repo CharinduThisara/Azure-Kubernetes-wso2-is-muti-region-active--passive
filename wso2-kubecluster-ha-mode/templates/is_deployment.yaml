@@ -19,7 +19,7 @@ spec:
     spec:
       containers:
         - name: wso2-is-container
-          image: acrasgardeomainrnd001.azurecr.io/is7.0:rc7
+          image: acrasgardeomainrnd001.azurecr.io/is7.0:agent1
           imagePullPolicy: Always
           livenessProbe:
             httpGet:
@@ -49,9 +49,15 @@ spec:
             - name: identity-server-conf
               mountPath: /home/wso2carbon/wso2is-7.0.0/repository/conf/deployment.toml
               subPath: deployment.toml
+            - name: identity-server-env
+              mountPath: /home/wso2carbon/wso2is-7.0.0/.env
+              subPath: .env
       
       volumes:
         - name: identity-server-conf
           configMap:
             name: identity-server-conf-rw
+        - name: identity-server-env
+          configMap:
+            name: identity-server-env
       serviceAccountName: is-service-account
