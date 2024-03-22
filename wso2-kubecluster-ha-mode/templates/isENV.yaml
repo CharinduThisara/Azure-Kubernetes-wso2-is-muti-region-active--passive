@@ -30,7 +30,6 @@ data:
     COSMOS_PASSWORD=
     COSMOS_CONTACT_POINT=wso2-is-sync.cassandra.cosmos.azure.com
     COSMOS_PORT=10350
-    COSMOS_REGION=Central US
+    COSMOS_REGION=East US 2
     COSMOS_KEYSPACE=sync
     COSMOS_TABLE=users
-
