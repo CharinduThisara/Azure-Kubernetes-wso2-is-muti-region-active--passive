@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: wso2-is-node
+  name: wso2-is-node-hotdr
   namespace: {{ .Values.Namespace }}
   labels:
     deployment: wso2is-hotdr # Labels for the deployment itself
