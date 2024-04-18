@@ -28,14 +28,14 @@ Before proceeding, ensure you have the following:
 
 1. Create a private Azure Kubernetes Service (AKS) for the primary (Active) instance of the Identity Server.
 
-### Step 5: Set Up Linux VM
+### Step 5: Set Up a Linux VM
 
 1. Create a Linux VM in Azure and connect it to the AKS.
 2. Install kubectl, Helm, and Azure CLI on the VM.
 
-### Step 6: Create Helm Package
+### Step 6: Create the Helm Chart
 
-1. Create a Helm package for the IS Kubernetes Deployment and push it to Git.
+1. Create a Helm chart for the IS Kubernetes Deployment and push it to Git.
 
 ### Step 7: Clone Git Repo to VM
 
@@ -44,7 +44,7 @@ Before proceeding, ensure you have the following:
 ### Step 8: Create the External DBs.
 
 1. Create two SQL Servers in each paired region.
-2. Create a database in the primary region and set up Geo-Replication for read-only replica.
+2. Create a database in the primary region and set up Geo-Replication for read-only replica in the secondary region.
 
 ### Step 9: Deploy WSO2 Identity Server
 
