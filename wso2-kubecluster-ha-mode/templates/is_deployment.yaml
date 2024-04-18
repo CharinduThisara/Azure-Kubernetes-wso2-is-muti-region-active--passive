@@ -4,7 +4,7 @@ metadata:
   name: wso2-is-node
   namespace: {{ .Values.Namespace }}
   labels:
-    deployment: wso2is # Labels for the deployment itself
+    deployment: wso2is-hotdr # Labels for the deployment itself
 spec:
   selector:
     matchLabels:
@@ -15,7 +15,7 @@ spec:
   template:
     metadata:
       labels:
-        deployment: wso2is  # Labels applied to pods created by this template
+        deployment: wso2is-hotdr  # Labels applied to pods created by this template
     spec:
       containers:
         - name: wso2-is-container
