@@ -8,7 +8,7 @@ metadata:
 spec:
   selector:
     matchLabels:
-      deployment: wso2is  # Selector labels to match labels in the pod template
+      deployment: wso2is-hotdr  # Selector labels to match labels in the pod template
   replicas: {{ .Values.wso2.deployment.wso2is.replicas }}
   strategy:
     type: RollingUpdate
