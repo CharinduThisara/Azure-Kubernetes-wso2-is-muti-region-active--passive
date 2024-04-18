@@ -24,7 +24,7 @@ data:
   deployment.toml: |-
     # Deployment config for Identity Server deployment
     [server]
-    hostname = "wso2-is-east.eastus2.cloudapp.azure.com"
+    hostname = "wso2is.eastus2.cloudapp.azure.com"
     node_ip = "$env{NODE_IP}"
     base_path = "https://$ref{server.hostname}:${carbon.management.port}"
     force_local_cache = true
