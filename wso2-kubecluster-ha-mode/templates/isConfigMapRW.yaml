@@ -15,7 +15,7 @@
 apiVersion: v1
 kind: ConfigMap
 metadata:
-  name: identity-server-conf
+  name: identity-server-conf-rw
   namespace : {{ .Values.Namespace }}
   
 {{ if .Values.wso2.deployment.wso2is.config }}
@@ -39,13 +39,13 @@ data:
 
     [database.identity_db]
     type = "mssql"
-    url = "jdbc:sqlserver://is-mssql-server-primary.database.windows.net:1433;databaseName=ismssqldbprimary"
+    url = "jdbc:sqlserver://is-mssql-server-primary.database.windows.net:1433;databaseName=ismssqldbhotdr"
     username = "regadmin"
     password = "nimdager@123"
 
     [database.shared_db]
     type = "mssql"
-    url = "jdbc:sqlserver://is-mssql-server-primary.database.windows.net:1433;databaseName=ismssqldbprimary"
+    url = "jdbc:sqlserver://is-mssql-server-primary.database.windows.net:1433;databaseName=ismssqldbhotdr"
     username = "regadmin"
     password = "nimdager@123"
 
@@ -125,4 +125,3 @@ data:
     callback_url = "${carbon.protocol}:\\/\\/${carbon.host}\\/.*" 
 
 {{- end }}
-

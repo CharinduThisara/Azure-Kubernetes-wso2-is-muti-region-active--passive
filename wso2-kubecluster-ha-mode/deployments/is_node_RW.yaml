@@ -10,6 +10,8 @@ spec:
     matchLabels:
       deployment: wso2is  # Selector labels to match labels in the pod template
   replicas: {{ .Values.wso2.deployment.wso2is.replicas }}
+  strategy:
+    type: RollingUpdate
   template:
     metadata:
       labels:
@@ -17,8 +19,22 @@ spec:
     spec:
       containers:
         - name: wso2-is-container
-          image: acrasgardeomainrnd001.azurecr.io/is7.0:readonly
+          image: acrasgardeomainrnd001.azurecr.io/is7.0:rc7
           imagePullPolicy: Always
+          livenessProbe:
+            httpGet:
+              path: /carbon/admin/login.jsp
+              port: 9443
+              scheme: HTTPS
+            initialDelaySeconds: {{ .Values.wso2.deployment.wso2is.livenessProbe.initialDelaySeconds }}
+            periodSeconds: {{ .Values.wso2.deployment.wso2is.livenessProbe.periodSeconds }}
+          readinessProbe:
+            httpGet:
+              path: /api/health-check/v1.0/health
+              port: 9443
+              scheme: HTTPS
+            initialDelaySeconds: {{ .Values.wso2.deployment.wso2is.readinessProbe.initialDelaySeconds }}
+            periodSeconds: {{ .Values.wso2.deployment.wso2is.readinessProbe.periodSeconds }}
           ports:
             - containerPort: 9443
             - containerPort: 4000
@@ -37,5 +53,5 @@ spec:
       volumes:
         - name: identity-server-conf
           configMap:
-            name: identity-server-conf
+            name: identity-server-conf-rw
       serviceAccountName: is-service-account
