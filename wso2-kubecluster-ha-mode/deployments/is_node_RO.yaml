@@ -19,7 +19,7 @@ spec:
     spec:
       containers:
         - name: wso2-is-container
-          image: acrasgardeomainrnd001.azurecr.io/is7.0:rc7
+          image: acrasgardeomainrnd001.azurecr.io/is7.0:hotdr
           imagePullPolicy: Always
           livenessProbe:
             httpGet:
